@@ -4,5 +4,7 @@
   },
   "eslint.validate": [
     "javascript"
-  ]
+  ],
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
 }
