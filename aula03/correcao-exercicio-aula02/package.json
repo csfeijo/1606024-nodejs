@@ -1,0 +1,16 @@
+{
+  "name": "correcao-exercicio-aula02",
+  "version": "1.0.0",
+  "description": "",
+  "main": "getParameters.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

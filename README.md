@@ -33,14 +33,27 @@ A partir de agora o VSCode irá validar seu código sobre as definições do ESL
 - Enunciado do exercício para Aula 03
 - Extra: configurando o VSCode para usar a fonte Fira Code
 
+### [ Aula 03 ]
+- Correção do exercício
+- Design Patterns e otimização do exercício
+- Entendendo NPM / Package.json
+- Nodemon
+- Introdução ao Express
+
 
 ## Links úteis
+- [Site Professor Feijó](https://professorfeijo.com.br)
 - [Credenciais no Git](https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Configura%C3%A7%C3%A3o-Inicial-do-Git)
 - [ESLint](https://eslint.org/)
 - [NVM](https://github.com/nvm-sh/nvm)
 - [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 - [O que é CI/CD](https://www.redhat.com/pt-br/topics/devops/what-is-ci-cd)
 - [Entendendo a Arquitetura de Microservices](https://medium.com/xp-inc/entendendo-a-arquitetura-de-microservices-cdab6b52d6ed)
+- [Uso do async/await para FS](https://dev.to/starpebble/async-await-with-nodejs-file-system-1aa2)
+- [API do FS](https://nodejs.org/api/fs.html#filehandlereadfileoptions)
+- [SonarQube](https://www.sonarsource.com/products/sonarqube/)
+- [Mapeamento de teclas no VSCode](https://code.visualstudio.com/docs/getstarted/keybindings)
+
 
 ## Anotações
 - CI/CD -> Continuous Integraton (Integração continua) & Continuous Delivery (Entrega continua)
