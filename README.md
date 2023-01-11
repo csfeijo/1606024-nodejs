@@ -40,6 +40,14 @@ A partir de agora o VSCode irá validar seu código sobre as definições do ESL
 - Nodemon
 - Introdução ao Express
 
+### [ Aula 04 ]
+- Express
+- Rotas
+- Rotas dinâmicas
+- Static Files
+- Midlewares
+- __dirname
+
 
 ## Links úteis
 - [Site Professor Feijó](https://professorfeijo.com.br)
@@ -53,6 +61,8 @@ A partir de agora o VSCode irá validar seu código sobre as definições do ESL
 - [API do FS](https://nodejs.org/api/fs.html#filehandlereadfileoptions)
 - [SonarQube](https://www.sonarsource.com/products/sonarqube/)
 - [Mapeamento de teclas no VSCode](https://code.visualstudio.com/docs/getstarted/keybindings)
+- [NVM - Node Version Manager](https://github.com/nvm-sh/nvm)
+= [NVM - Usando e instalando](https://blog.cod3r.com.br/instalando-e-utilizando-o-nvm-no/)
 
 
 ## Anotações
