@@ -48,6 +48,9 @@ A partir de agora o VSCode irá validar seu código sobre as definições do ESL
 - Midlewares
 - __dirname
 
+### [ Aula 05 ]
+- Correção do exercício
+
 
 ## Links úteis
 - [Site Professor Feijó](https://professorfeijo.com.br)
