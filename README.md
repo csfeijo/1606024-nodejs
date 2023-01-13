@@ -50,6 +50,11 @@ A partir de agora o VSCode irá validar seu código sobre as definições do ESL
 
 ### [ Aula 05 ]
 - Correção do exercício
+- Thunder Client
+- Métodos GET, POST, PUT/PATCH & DELETE
+- Collection no Thunder Client
+- Requests via Thunder Client
+- Body Parser Middleware
 
 
 ## Links úteis

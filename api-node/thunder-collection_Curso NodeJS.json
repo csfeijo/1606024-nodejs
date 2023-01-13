@@ -1,0 +1,79 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "Curso NodeJS",
+  "dateExported": "2023-01-12T23:42:34.914Z",
+  "version": "1.1",
+  "folders": [],
+  "requests": [
+    {
+      "_id": "e0a1f509-ac79-4597-bca2-2c6aba48efee",
+      "colId": "642bc7fe-814e-48a7-8b38-8cc882b54682",
+      "containerId": "",
+      "name": "Listar Departamentos",
+      "url": "localhost:3033/departamentos/",
+      "method": "GET",
+      "sortNum": 5000,
+      "created": "2023-01-12T23:37:20.504Z",
+      "modified": "2023-01-12T23:38:54.872Z",
+      "headers": [],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "a367c322-23e1-4dab-9e2d-c991dd024e9a",
+      "colId": "642bc7fe-814e-48a7-8b38-8cc882b54682",
+      "containerId": "",
+      "name": "Cadastra Departamento",
+      "url": "localhost:3033/departamentos/",
+      "method": "POST",
+      "sortNum": 7500,
+      "created": "2023-01-12T23:38:35.675Z",
+      "modified": "2023-01-12T23:40:24.642Z",
+      "headers": [],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "5cb65ea6-5823-4de1-8c26-51915c18edb7",
+      "colId": "642bc7fe-814e-48a7-8b38-8cc882b54682",
+      "containerId": "",
+      "name": "Exclui Departamento",
+      "url": "localhost:3033/departamento/13",
+      "method": "DELETE",
+      "sortNum": 10000,
+      "created": "2023-01-12T23:35:59.010Z",
+      "modified": "2023-01-12T23:36:48.514Z",
+      "headers": [],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "f9993e2e-17b6-4223-bfc9-92eb4cc02838",
+      "colId": "642bc7fe-814e-48a7-8b38-8cc882b54682",
+      "containerId": "",
+      "name": "Atualizar Departamento",
+      "url": "localhost:3033/departamento/55",
+      "method": "PUT",
+      "sortNum": 30000,
+      "created": "2023-01-12T23:37:49.953Z",
+      "modified": "2023-01-12T23:37:59.109Z",
+      "headers": [],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "568d875e-717f-4fac-a0e0-7af1893e1e99",
+      "colId": "642bc7fe-814e-48a7-8b38-8cc882b54682",
+      "containerId": "",
+      "name": "Lista Departamento pelo ID",
+      "url": "localhost:3033/departamentos/14",
+      "method": "GET",
+      "sortNum": 40000,
+      "created": "2023-01-12T23:39:43.780Z",
+      "modified": "2023-01-12T23:39:43.780Z",
+      "headers": [],
+      "params": [],
+      "tests": []
+    }
+  ]
+}
