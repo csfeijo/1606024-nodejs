@@ -56,6 +56,13 @@ A partir de agora o VSCode irá validar seu código sobre as definições do ESL
 - Requests via Thunder Client
 - Body Parser Middleware
 
+### [ Aula 06 ]
+- Bate Papo sobre POC e organização de projeto (Jira, Trello, etc)
+- Mock com JSON
+- Conectando o MySQL no NodeJS
+- Tratando erros e status de conexão na API
+- Implementação das rotas:
+  - GET /departamentos e GET /departamentos/:idDepartamento
 
 ## Links úteis
 - [Site Professor Feijó](https://professorfeijo.com.br)
@@ -70,12 +77,24 @@ A partir de agora o VSCode irá validar seu código sobre as definições do ESL
 - [SonarQube](https://www.sonarsource.com/products/sonarqube/)
 - [Mapeamento de teclas no VSCode](https://code.visualstudio.com/docs/getstarted/keybindings)
 - [NVM - Node Version Manager](https://github.com/nvm-sh/nvm)
-= [NVM - Usando e instalando](https://blog.cod3r.com.br/instalando-e-utilizando-o-nvm-no/)
+- [NVM - Usando e instalando](https://blog.cod3r.com.br/instalando-e-utilizando-o-nvm-no/)
+- [Colocando cores no console](https://stackoverflow.com/questions/9781218/how-to-change-node-jss-console-font-color)
+
+### Ferramentas de gerenciamento de projeto
+- [Jira](jira.com)
+- [Trello](trello.com)
+- [PivotalTracker](pivotaltracker.com)
+
+### Carreira
+- [The Developer Roadmap](https://roadmap.sh/)
+- [The Developer Roadmap - Front-End](https://roadmap.sh/frontend/)
+- [The Developer Roadmap - Back-End](https://roadmap.sh/backend/)
 
 
 ## Anotações
 - CI/CD -> Continuous Integraton (Integração continua) & Continuous Delivery (Entrega continua)
 - Microservices
+- Mock (mock-up): é a entrega de dados no formato esperado, porém dados fakes.
 
 ## Usando a fonte Fira Code no VSCode
 - Acesse o link a seguir [Fira Code](https://github.com/tonsky/FiraCode) e scrolle a página até aparecer o botão de Download & Install
