@@ -64,6 +64,13 @@ A partir de agora o VSCode irá validar seu código sobre as definições do ESL
 - Implementação das rotas:
   - GET /departamentos e GET /departamentos/:idDepartamento
 
+### [ Aula 07 ]
+- Correção do exercício
+- end-point da API utilizando req.body + req.params
+- .env no NodeJS
+- Introdução ao Swagger
+
+
 ## Links úteis
 - [Site Professor Feijó](https://professorfeijo.com.br)
 - [Credenciais no Git](https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Configura%C3%A7%C3%A3o-Inicial-do-Git)
@@ -90,11 +97,21 @@ A partir de agora o VSCode irá validar seu código sobre as definições do ESL
 - [The Developer Roadmap - Front-End](https://roadmap.sh/frontend/)
 - [The Developer Roadmap - Back-End](https://roadmap.sh/backend/)
 
+### Sobre API´s
+- [BFF](https://medium.com/digitalproductsdev/arquitetura-bff-back-end-for-front-end-13e2cbfbcda2)
+- [RestAPI](https://www.redhat.com/pt-br/topics/api/what-is-a-rest-api)
+= [Introdução a API Restful](https://www.devmedia.com.br/introducao-a-web-services-restful/37387#:~:text=O%20padr%C3%A3o%20REST%20determina%20como,entidade%20em%20um%20dado%20momento.)
+- [Status Codes for API´s](https://www.moesif.com/blog/technical/api-design/Which-HTTP-Status-Code-To-Use-For-Every-CRUD-App/#:~:text=404%20means%20Not%20Found.,something%20wrong%20on%20the%20backend.)
+
+- [GitHubAPI - CSFEIJO](https://api.github.com/users/csfeijo)
+- [GitHubAPI - CSFEIJO/REPOS](https://api.github.com/users/csfeijo/repos)
+- [DOTENV](https://github.com/motdotla/dotenv#readme)
 
 ## Anotações
 - CI/CD -> Continuous Integraton (Integração continua) & Continuous Delivery (Entrega continua)
 - Microservices
 - Mock (mock-up): é a entrega de dados no formato esperado, porém dados fakes.
+- Variáveis de ambiente (Environment Variables): são usadas para armanzenar informações sensíveis e que não podem ser adicionadas no código fonte da aplicação.
 
 ## Usando a fonte Fira Code no VSCode
 - Acesse o link a seguir [Fira Code](https://github.com/tonsky/FiraCode) e scrolle a página até aparecer o botão de Download & Install
