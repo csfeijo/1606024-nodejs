@@ -66,9 +66,16 @@ A partir de agora o VSCode irá validar seu código sobre as definições do ESL
 
 ### [ Aula 07 ]
 - Correção do exercício
-- end-point da API utilizando req.body + req.params
+- End-point da API utilizando req.body + req.params
 - .env no NodeJS
 - Introdução ao Swagger
+
+## [ Aula 08 ]
+[ TODO´s ]
+- Swagger
+- API do GitHub
+- Pug Templates
+- Vercel
 
 
 ## Links úteis
