@@ -70,12 +70,18 @@ A partir de agora o VSCode irá validar seu código sobre as definições do ESL
 - .env no NodeJS
 - Introdução ao Swagger
 
-## [ Aula 08 ]
-[ TODO´s ]
-- Swagger
+### [ Aula 08 ]
+- Correção do exercício
+- Bate papo: fluxo de desenvolvimento com Pull Request no GitHub
+- Swagger JS Doc
+- Swagger UI
+
+### [ Aula 09 ]
+[ TODO ]
 - API do GitHub
 - Pug Templates
 - Vercel
+
 
 
 ## Links úteis
@@ -113,6 +119,10 @@ A partir de agora o VSCode irá validar seu código sobre as definições do ESL
 - [GitHubAPI - CSFEIJO](https://api.github.com/users/csfeijo)
 - [GitHubAPI - CSFEIJO/REPOS](https://api.github.com/users/csfeijo/repos)
 - [DOTENV](https://github.com/motdotla/dotenv#readme)
+
+## Extensoes
+- Git Graph
+
 
 ## Anotações
 - CI/CD -> Continuous Integraton (Integração continua) & Continuous Delivery (Entrega continua)

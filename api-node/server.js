@@ -1,6 +1,9 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import con from './connect-db.js'
+import swaggerJSDoc from 'swagger-jsdoc'
+import swaggerUI from 'swagger-ui-express'
+
 // Para node 16 ou menor importamos passando o parametro assert
 import listarDepartamentos from './mock/ListarDepartamentos.json' assert { type: 'json'}
 import listarDepartamento from './mock/ListarDepartamento.json' assert { type: 'json'}
@@ -13,9 +16,34 @@ app.use(bodyParser.json())
 // O "extended" habilita o JSON para suportar caracteres UTF-8
 app.use(bodyParser.urlencoded({ extended: true }))
 
+const options = {
+  definition: {
+    info: {
+      title: 'API NODE JS',
+      version: '1.0.0'
+    }
+  },
+  apis: ['server.js']
+}
+const swaggerSpec = swaggerJSDoc(options)
+
+app.use('/swagger-ui', swaggerUI.serve, swaggerUI.setup(swaggerSpec))
+
 // Habilita o uso de mock´s
 const useMock = false
 
+/**
+ * @swagger
+ * 
+ * /departamentos:
+ *  get:
+ *    description: Lista todos os departamentos ordenados pelo nome
+ *    produces:
+ *      - application/json
+ *    responses:
+ *      200:
+ *        description: Exibe todos os departamentos em um vetor
+ */
 app.get('/departamentos', (req, res) => {
   const method = req.method
   console.log(`${method} /departamentos`)
@@ -61,13 +89,64 @@ app.get('/departamentos/:idDepartamento', (req, res) => {
 
 })
 
+/**
+ * @swagger
+ * 
+ * /departamentos:
+ *  post:
+ *    description: Insere um departamento na base
+ *    produces:
+ *      - application/json
+ *    parameters:
+ *      - in: formData
+ *        name: nome
+ *        description: nome do departamento (unique)
+ *        required: true
+ *        type: string
+ *      - in: formData
+ *        name: sigla
+ *        description: sigla do departamento (unique)
+ *        type: string 
+ *    responses:
+ *      200:
+ *        description: registro inserido com sucesso
+ *      500:
+ *        description: erro do banco de dados
+ */
 app.post('/departamentos', (req, res) => {
   const method = req.method
-
-  console.log(req.body.nome)
-
   console.log(`${method} /departamentos`)
-  res.send(`${method} /departamentos`)
+  let { nome = '', sigla = '' } = req.body
+
+  nome = nome.trim()
+  sigla = sigla.trim()
+
+  if (nome === '' || sigla === '') {
+    res.send({
+      message: 'Wrong or insufficient parameters',
+      parameters_received: req.body
+    })
+    return 
+  }
+
+  con.query(`INSERT INTO DEPARTAMENTOS (nome, sigla) VALUES ('${nome}', '${sigla}')`, (err, result) => {
+    if (err) {
+      res.status(500)
+      res.send(err)
+      return
+    }
+
+    //Em caso de sucesso:
+    if (result.insertId) {
+      res.send({
+        message: 'Register inserted with success',
+        insertId: result.insertId
+      })  
+      return
+    }
+    res.send(result)
+  })
+
 })
 
 app.put('/departamento/:idDepartamento',  (req, res) => {
