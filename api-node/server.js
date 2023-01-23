@@ -7,6 +7,7 @@ import swaggerUI from 'swagger-ui-express'
 // Para node 16 ou menor importamos passando o parametro assert
 import listarDepartamentos from './mock/ListarDepartamentos.json' assert { type: 'json'}
 import listarDepartamento from './mock/ListarDepartamento.json' assert { type: 'json'}
+import axios from 'axios'
 
 // Para Node acima da versão 16 importamos sem o assert
 //import listarDepartamentos from './mock/ListarDepartamentos.json'
@@ -64,6 +65,24 @@ app.get('/departamentos', (req, res) => {
   })  
 })
 
+/**
+ * @swagger
+ * 
+ * /departamentos/{idDepartamento}:
+ *  get:
+ *    description: Lista todos os dados de um departamento baseado no seu ID
+ *    produces:
+ *      - application/json
+ *    parameters:
+ *      - in: path
+ *        name: idDepartamento
+ *        description: identificador unico do departamento
+ *        required: true
+ *        type: integer
+ *    responses:
+ *      200:
+ *        description: Retorna todos os dados de UM departamento
+ */
 app.get('/departamentos/:idDepartamento', (req, res) => {
   const { idDepartamento } = req.params
   const method = req.method
@@ -149,6 +168,7 @@ app.post('/departamentos', (req, res) => {
 
 })
 
+
 app.put('/departamento/:idDepartamento',  (req, res) => {
   const { idDepartamento } = req.params
   const method = req.method
@@ -156,12 +176,55 @@ app.put('/departamento/:idDepartamento',  (req, res) => {
   res.send(`${method} /departamentos/${idDepartamento}`)
 })
 
+/**
+ * @swagger
+ * 
+ * /departamentos/{idDepartamento}:
+ *  delete:
+ *    description: Remove um departamento baseado no seu ID
+ *    produces:
+ *      - application/json
+ *    parameters:
+ *      - in: path
+ *        name: idDepartamento
+ *        description: identificador unico do departamento
+ *        required: true
+ *        type: integer
+ *    responses:
+ *      200:
+ *        description: Retorna todos os dados de UM departamento
+ *      404:
+ *        description: Caso não encontre o registro
+ *      500:
+ *        description: Erro no servidor/aplicação
+ */
 app.delete('/departamento/:idDepartamento',  (req, res) => {
   const { idDepartamento } = req.params
   const method = req.method
-
   console.log(`${method} /departamentos/${idDepartamento}`)
-  res.send(`${method} /departamentos/${idDepartamento}`)
+
+  con.query(`DELETE FROM DEPARTAMENTOS WHERE id_departamento = '${idDepartamento}'`,  (err, result) => {
+    if (err) {
+      res.status(500)
+      res.send(err)
+      return
+    }
+
+    if (result.affectedRows > 0) {
+      res.status(200)
+      res.send({
+        "message": "Row deleted with success",
+        "id_departamento": idDepartamento
+      })
+    }
+
+    res.status(404)
+    res.send({
+      "message": "Row not found",
+      "id_departamento": idDepartamento
+    })
+    
+  })  
 })
 
 // Exemplo utilizando diversos formatos de parametros
@@ -182,8 +245,24 @@ app.get('/funcionarios/:busca', (req, res) => {
 })
 
 
+// Rota para BFF: executa a chamada de outra API
+app.get('/feriados/:ano', (req, res) => {
+  const { ano }  = req.params
+  const baseUrl = 'https://brasilapi.com.br/api'
 
-
+  axios.get(`${baseUrl}/feriados/v1/${ano}`, {
+    headers: {
+      'Authorization': ''
+    }
+  })
+    .then(response => {
+      res.send(response.data)
+    })
+    .catch(erro => {
+      console.log(erro)
+      res.send()
+    })
+})
 
 
 app.listen(3033, () => {

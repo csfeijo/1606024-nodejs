@@ -77,11 +77,15 @@ A partir de agora o VSCode irá validar seu código sobre as definições do ESL
 - Swagger UI
 
 ### [ Aula 09 ]
-[ TODO ]
+- Correção do exercício
 - API do GitHub
-- Pug Templates
-- Vercel
+- Brasil API
+- BFF (chamada para API´s de terceiros)
+- Deploy com Vercel e Surge
 
+### [ Aula 10 ]
+- Testes automatizados
+- Pug Templates
 
 
 ## Links úteis
@@ -119,6 +123,25 @@ A partir de agora o VSCode irá validar seu código sobre as definições do ESL
 - [GitHubAPI - CSFEIJO](https://api.github.com/users/csfeijo)
 - [GitHubAPI - CSFEIJO/REPOS](https://api.github.com/users/csfeijo/repos)
 - [DOTENV](https://github.com/motdotla/dotenv#readme)
+
+- [API Brasil](https://brasilapi.com.br/)
+- [GIT HUB API](https://docs.github.com/pt/rest?apiVersion=2022-11-28)
+
+- [Diferença entre PUT e PATCH](https://cursos.alura.com.br/forum/topico-diferenca-entre-put-e-patch-44669)
+
+### Deploy
+- [Vercel - (Host de estáticos)](https://vercel.com)
+- [Surge - (Host de estáticos)](surge.sh)
+- [Infinityfree - (Host de PHP e MySQL)](https://www.infinityfree.net/)
+
+
+### Next Steps
+- Testes automatizados de API
+- https://oauth.net/2/
+- Deploy CI/CD (Jenkins, GitHub Actions...)
+- Serviços de Deploys (Vercel, Netlify, Fly.io, Surge)
+
+
 
 ## Extensoes
 - Git Graph
