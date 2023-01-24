@@ -168,12 +168,81 @@ app.post('/departamentos', (req, res) => {
 
 })
 
-
+/**
+ * @swagger
+ * 
+ * /departamentos/{idDepartamento}:
+ *  put:
+ *    description: Atualiza um departamento baseado no seu ID
+ *    produces:
+ *      - application/json
+ *    parameters:
+ *      - in: path
+ *        name: idDepartamento
+ *        description: identificador unico do departamento
+ *        required: true
+ *        type: integer
+ *      - in: formData
+ *        name: nome
+ *        description: nome do departamento (unique)
+ *        required: true
+ *        type: string
+ *      - in: formData
+ *        name: sigla
+ *        description: sigla do departamento (unique)
+ *        type: string 
+ *    responses:
+ *      200:
+ *        description: Retorna sucesso caso atualizado
+ *      404:
+ *        description: Caso não encontre o registro
+ *      500:
+ *        description: Erro no servidor/aplicação
+ */
 app.put('/departamento/:idDepartamento',  (req, res) => {
   const { idDepartamento } = req.params
   const method = req.method
   console.log(`${method} /departamentos/${idDepartamento}`)
-  res.send(`${method} /departamentos/${idDepartamento}`)
+
+  let { nome = '', sigla = '' } = req.body
+
+  nome = nome.trim()
+  sigla = sigla.trim()
+
+  if (nome === '' || sigla === '') {
+    res.send({
+      message: 'Wrong or insufficient parameters',
+      parameters_received: req.body
+    })
+    return 
+  }
+
+  con.query(
+    `UPDATE DEPARTAMENTOS 
+      SET nome='${nome}', 
+      sigla='${sigla}' 
+    WHERE id_departamento = ${idDepartamento}`, (err, result) => {
+      if (err) {
+        res.status(500)
+        res.send(err)
+        return
+      }
+
+      //Em caso de sucesso:
+      if (result.affectedRows > 0) {
+        res.send({
+          message: 'Row updated with success',
+          id_departamento: idDepartamento
+        })  
+        return
+      }
+
+      res.status(404)
+      res.send({
+        "message": "Row not found",
+        "id_departamento": idDepartamento
+      })
+  })
 })
 
 /**

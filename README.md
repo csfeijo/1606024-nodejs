@@ -134,12 +134,38 @@ A partir de agora o VSCode irá validar seu código sobre as definições do ESL
 - [Surge - (Host de estáticos)](surge.sh)
 - [Infinityfree - (Host de PHP e MySQL)](https://www.infinityfree.net/)
 
+### BD
+https://kinsta.com/pt/blog/mongodb-vs-mysql/#mongodb-vs-mysql-quando-uslos
+https://blog.saphir.com.br/conheca-os-principais-bancos-de-dados-nosql-nao-relacionais/
 
 ### Next Steps
 - Testes automatizados de API
 - https://oauth.net/2/
 - Deploy CI/CD (Jenkins, GitHub Actions...)
 - Serviços de Deploys (Vercel, Netlify, Fly.io, Surge)
+- MongoDB (NoSQL)
+
+DEPARTAMENTOS
+[
+  { id: 1, nome: 'Rec Hum', sigla: 'RH' },
+  { id: 2, nome: 'Sist. Inf.', sigla: 'SI' }
+  { id: 3, nome: 'Sist. Inf.', sigla: 'SI', descricao: 'adasdadasd' }
+]
+
+const model = new Model('departamentos')
+model.updateByid(1, { nome: 'Humanos' })
+model.deleteById(1)
+model.deleteAll()
+model.findById(1)
+model.all()
+
+
+
+
+
+
+
+
 
 
 
