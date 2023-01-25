@@ -337,3 +337,5 @@ app.get('/feriados/:ano', (req, res) => {
 app.listen(3033, () => {
   console.log('Server is running!')
 })
+
+export default app
