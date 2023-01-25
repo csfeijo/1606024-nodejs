@@ -84,8 +84,15 @@ A partir de agora o VSCode irá validar seu código sobre as definições do ESL
 - Deploy com Vercel e Surge
 
 ### [ Aula 10 ]
+- Correção de exercício
+- Deploy de API na Vercel
+- Environment Variables
 - Testes automatizados
-- Pug Templates
+- Bate Papo de Carreira
+- Próximos passos
+- O que virá no próximo curso?
+
+
 
 
 ## Links úteis
@@ -133,13 +140,22 @@ A partir de agora o VSCode irá validar seu código sobre as definições do ESL
 - [Vercel - (Host de estáticos)](https://vercel.com)
 - [Surge - (Host de estáticos)](surge.sh)
 - [Infinityfree - (Host de PHP e MySQL)](https://www.infinityfree.net/)
+- [Projeto Base para API na Vercel - vimos na última aula](https://github.com/csfeijo/nodejs-api-vercel)
+
 
 ### BD
-https://kinsta.com/pt/blog/mongodb-vs-mysql/#mongodb-vs-mysql-quando-uslos
-https://blog.saphir.com.br/conheca-os-principais-bancos-de-dados-nosql-nao-relacionais/
+- [MongoDB VS MySQL](https://kinsta.com/pt/blog/mongodb-vs-mysql/#mongodb-vs-mysql-quando-uslos)
+- [Principais BD não relacionais](https://blog.saphir.com.br/conheca-os-principais-bancos-de-dados-nosql-nao-relacionais/)
+
+#### FREELANCER
+- [Workana](https://www.workana.com/pt/)
+- [CROWD](https://crowd.br.com/sou-freelancer/)
 
 ### Next Steps
 - Testes automatizados de API
+  - BDD: Behavior Driven Development (Desenv. orientado a comportamento)
+  - TDD: Test Driven Development (Desenv. orientado a teste)
+
 - https://oauth.net/2/
 - Deploy CI/CD (Jenkins, GitHub Actions...)
 - Serviços de Deploys (Vercel, Netlify, Fly.io, Surge)
@@ -158,6 +174,18 @@ model.deleteById(1)
 model.deleteAll()
 model.findById(1)
 model.all()
+
+AMBIENTE LOCAL
+.env
+DB_HOST: localhost (pq o banco está local)
+
+AMBIENTE DE HOMOLOGAÇÃO
+.env
+DB_HOST: hlg.mysql.site.com BANCO QUE ESTÁ EM OUTRO ENDEREÇO
+
+AMBIENTE DE PRODUCAO
+.env
+DB_HOST: prod.mysql.site.com BANCO QUE ESTÁ EM OUTRO ENDEREÇO
 
 
 
