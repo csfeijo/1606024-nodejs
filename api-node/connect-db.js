@@ -11,6 +11,7 @@ const con = mysql.createPool({
   database: process.env.DB_NAME
 })
 
+
 // Configura o con para reportar erros de conexao do banco via console do terminal
 con.getConnection((err, connection) => {
   if (err) {
