@@ -1,4 +1,5 @@
 import express from 'express'
+import cors from 'cors'
 import bodyParser from 'body-parser'
 import con from './connect-db.js'
 import swaggerJSDoc from 'swagger-jsdoc'
@@ -13,6 +14,7 @@ import axios from 'axios'
 //import listarDepartamentos from './mock/ListarDepartamentos.json'
 
 const app = express()
+app.use(cors())
 app.use(bodyParser.json())
 // O "extended" habilita o JSON para suportar caracteres UTF-8
 app.use(bodyParser.urlencoded({ extended: true }))
