@@ -5,6 +5,7 @@ const con = require('./connect-db')
 const swaggerJSDoc = require('swagger-jsdoc')
 const swaggerUI = require('swagger-ui-express')
 const axios = require('axios')
+const validateToken = require('./json-web-token')
 
 const app = express()
 app.use(cors())
@@ -22,7 +23,7 @@ const options = {
 }
 const swaggerSpec = swaggerJSDoc(options)
 
-app.use('/swagger-ui', swaggerUI.serve, swaggerUI.setup(swaggerSpec))
+// app.use('/swagger-ui', swaggerUI.serve, swaggerUI.setup(swaggerSpec))
 
 /**
  * @swagger
@@ -36,7 +37,7 @@ app.use('/swagger-ui', swaggerUI.serve, swaggerUI.setup(swaggerSpec))
  *      200:
  *        description: Exibe todos os departamentos em um vetor
  */
-app.get('/departamentos', (req, res) => {
+app.get('/departamentos', validateToken, (req, res) => {
   const method = req.method
   console.log(`${method} /departamentos`)
 
@@ -49,6 +50,10 @@ app.get('/departamentos', (req, res) => {
 
     res.send(result)
   })  
+})
+
+app.get('/', validateToken, (req, res) => {
+  res.send('NodeJS API')
 })
 
 /**
@@ -69,7 +74,7 @@ app.get('/departamentos', (req, res) => {
  *      200:
  *        description: Retorna todos os dados de UM departamento
  */
-app.get('/departamentos/:idDepartamento', (req, res) => {
+app.get('/departamentos/:idDepartamento', validateToken, (req, res) => {
   const { idDepartamento } = req.params
   const method = req.method
   console.log(`${method} /departamentos/${idDepartamento}`)
@@ -113,7 +118,7 @@ app.get('/departamentos/:idDepartamento', (req, res) => {
  *      500:
  *        description: erro do banco de dados
  */
-app.post('/departamentos', (req, res) => {
+app.post('/departamentos', validateToken, (req, res) => {
   const method = req.method
   console.log(`${method} /departamentos`)
   let { nome = '', sigla = '' } = req.body
@@ -180,7 +185,7 @@ app.post('/departamentos', (req, res) => {
  *      500:
  *        description: Erro no servidor/aplicação
  */
-app.put('/departamento/:idDepartamento',  (req, res) => {
+app.put('/departamento/:idDepartamento',  validateToken, (req, res) => {
   const { idDepartamento } = req.params
   const method = req.method
   console.log(`${method} /departamentos/${idDepartamento}`)
@@ -248,7 +253,7 @@ app.put('/departamento/:idDepartamento',  (req, res) => {
  *      500:
  *        description: Erro no servidor/aplicação
  */
-app.delete('/departamento/:idDepartamento',  (req, res) => {
+app.delete('/departamento/:idDepartamento', validateToken, (req, res) => {
   const { idDepartamento } = req.params
   const method = req.method
   console.log(`${method} /departamentos/${idDepartamento}`)
@@ -278,7 +283,7 @@ app.delete('/departamento/:idDepartamento',  (req, res) => {
 })
 
 // Exemplo utilizando diversos formatos de parametros
-app.get('/funcionarios/:busca', (req, res) => {
+app.get('/funcionarios/:busca', validateToken, (req, res) => {
   const { busca } = req.params
   const { exact, searchField } = req.body
   const strLike = exact ? `= '${busca}'` : `LIKE '%${busca}%'`
@@ -294,29 +299,6 @@ app.get('/funcionarios/:busca', (req, res) => {
   })
 })
 
-
-// Rota para BFF: executa a chamada de outra API
-app.get('/feriados/:ano', (req, res) => {
-  const { ano }  = req.params
-  const baseUrl = 'https://brasilapi.com.br/api'
-
-  axios.get(`${baseUrl}/feriados/v1/${ano}`, {
-    headers: {
-      'Authorization': ''
-    }
-  })
-    .then(response => {
-      res.send(response.data)
-    })
-    .catch(erro => {
-      console.log(erro)
-      res.send()
-    })
-})
-
-
 app.listen(80, () => {
   console.log('Server is running!')
 })
-
-//export default app
