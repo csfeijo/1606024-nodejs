@@ -1,30 +1,14 @@
-//import express from 'express'
 const express = require('express')
-//import cors from 'cors'
 const cors = require('cors')
-//import bodyParser from 'body-parser'
 const bodyParser = require('body-parser')
-//import con from './connect-db.js'
 const con = require('./connect-db')
-//import swaggerJSDoc from 'swagger-jsdoc'
 const swaggerJSDoc = require('swagger-jsdoc')
-//import swaggerUI from 'swagger-ui-express'
 const swaggerUI = require('swagger-ui-express')
-
-// Para node 16 ou menor importamos passando o parametro assert
-//import listarDepartamentos from './mock/ListarDepartamentos.json' assert { type: 'json'}
-//import listarDepartamento from './mock/ListarDepartamento.json' assert { type: 'json'}
-//import axios from 'axios'
 const axios = require('axios')
-
-
-// Para Node acima da versão 16 importamos sem o assert
-//import listarDepartamentos from './mock/ListarDepartamentos.json'
 
 const app = express()
 app.use(cors())
 app.use(bodyParser.json())
-// O "extended" habilita o JSON para suportar caracteres UTF-8
 app.use(bodyParser.urlencoded({ extended: true }))
 
 const options = {
@@ -39,9 +23,6 @@ const options = {
 const swaggerSpec = swaggerJSDoc(options)
 
 app.use('/swagger-ui', swaggerUI.serve, swaggerUI.setup(swaggerSpec))
-
-// Habilita o uso de mock´s
-const useMock = false
 
 /**
  * @swagger
@@ -58,11 +39,6 @@ const useMock = false
 app.get('/departamentos', (req, res) => {
   const method = req.method
   console.log(`${method} /departamentos`)
-
-  if (useMock) {
-    res.send(listarDepartamentos)
-    return
-  }
 
   // Executa a query para o banco de dados
   con.query('SELECT * FROM DEPARTAMENTOS ORDER BY nome',  (err, result) => {
@@ -97,11 +73,6 @@ app.get('/departamentos/:idDepartamento', (req, res) => {
   const { idDepartamento } = req.params
   const method = req.method
   console.log(`${method} /departamentos/${idDepartamento}`)
-
-  if (useMock) {
-    res.send(listarDepartamento)
-    return
-  }
 
   con.query(`SELECT * FROM DEPARTAMENTOS WHERE id_departamento = '${idDepartamento}'`,  (err, result) => {
     if (err) {
