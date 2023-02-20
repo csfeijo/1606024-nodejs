@@ -1,22 +1,14 @@
-//import express from 'express'
-const express = require('express')
-//import cors from 'cors'
-const cors = require('cors')
-//import bodyParser from 'body-parser'
-const bodyParser = require('body-parser')
-//import con from './connect-db.js'
-const con = require('./connect-db')
-//import swaggerJSDoc from 'swagger-jsdoc'
-const swaggerJSDoc = require('swagger-jsdoc')
-//import swaggerUI from 'swagger-ui-express'
-const swaggerUI = require('swagger-ui-express')
+import express from 'express'
+import cors from 'cors'
+import bodyParser from 'body-parser'
+import con from './connect-db.js'
+import swaggerJSDoc from 'swagger-jsdoc'
+import swaggerUI from 'swagger-ui-express'
 
 // Para node 16 ou menor importamos passando o parametro assert
-//import listarDepartamentos from './mock/ListarDepartamentos.json' assert { type: 'json'}
-//import listarDepartamento from './mock/ListarDepartamento.json' assert { type: 'json'}
-//import axios from 'axios'
-const axios = require('axios')
-
+import listarDepartamentos from './mock/ListarDepartamentos.json' assert { type: 'json'}
+import listarDepartamento from './mock/ListarDepartamento.json' assert { type: 'json'}
+import axios from 'axios'
 
 // Para Node acima da versão 16 importamos sem o assert
 //import listarDepartamentos from './mock/ListarDepartamentos.json'
@@ -348,4 +340,4 @@ app.listen(80, () => {
   console.log('Server is running!')
 })
 
-//export default app
+export default app

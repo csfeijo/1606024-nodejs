@@ -1,7 +1,6 @@
-import mysql from 'mysql'
-import { config } from 'dotenv'
-
-config()
+const mysql = require('mysql');
+const dotenv = require('dotenv');
+dotenv.config();
 
 const con = mysql.createPool({
   connectionLimit: 10,
@@ -9,26 +8,25 @@ const con = mysql.createPool({
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
   database: process.env.DB_NAME
-})
-
+});
 
 // Configura o con para reportar erros de conexao do banco via console do terminal
 con.getConnection((err, connection) => {
   if (err) {
     if (err.code === 'PROTOCOL_CONNECTION_LOST') {
-      console.error('Database connection was closed.')
+      console.error('Database connection was closed.');
     }
     if (err.code === 'ER_CON_COUNT_ERROR') {
-      console.error('Database has too many connections.')
+      console.error('Database has too many connections.');
     }
     if (err.code === 'ECONNREFUSED') {
-      console.error('\x1b[31m','[ERROR] Conexão com a base de dados foi recusada.')
+      console.error('\x1b[31m','[ERROR] Conexão com a base de dados foi recusada.');
     }
   }
   if (connection) {
-    connection.release()
+    connection.release();
   }
-  return
-})
+  return;
+});
 
-export default con
+module.exports = con;

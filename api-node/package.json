@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "set NODE_ENV=test && mocha index.test.js --exit",
     "start": "node index.js",
