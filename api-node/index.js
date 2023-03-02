@@ -225,10 +225,10 @@ app.put('/departamento/:idDepartamento',  validateToken, (req, res) => {
 
       res.status(404)
       res.send({
-        "message": "Row not found",
-        "id_departamento": idDepartamento
+        'message': 'Row not found',
+        'id_departamento': idDepartamento
       })
-  })
+    })
 })
 
 /**
@@ -268,15 +268,16 @@ app.delete('/departamento/:idDepartamento', validateToken, (req, res) => {
     if (result.affectedRows > 0) {
       res.status(200)
       res.send({
-        "message": "Row deleted with success",
-        "id_departamento": idDepartamento
+        'message': 'Row deleted with success',
+        'id_departamento': idDepartamento
       })
+      return
     }
 
     res.status(404)
     res.send({
-      "message": "Row not found",
-      "id_departamento": idDepartamento
+      'message': 'Row not found',
+      'id_departamento': idDepartamento
     })
     
   })  
